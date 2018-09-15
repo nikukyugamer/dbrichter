@@ -4,7 +4,7 @@ require 'active_record'
 require 'pp'
 
 config = YAML.load_file( './database.yml' )
-ActiveRecord::Base.establish_connection(adapter: config['adapter'], database: config['database'])
+ActiveRecord::Base.establish_connection(adapter: config['sqlite3']['adapter'], database: config['sqlite3']['database'])
 
 class Article < ActiveRecord::Base
 end
